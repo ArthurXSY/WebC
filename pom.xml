@@ -21,6 +21,16 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
+    <dependency>
+      <groupId>javaee</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.2.2.RELEASE</version>
+    </dependency>
     <!--Spriing jdbc-->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -45,6 +55,11 @@
       <artifactId>druid</artifactId>
       <version>1.0.11</version>
     </dependency>
+    <dependency>
+    <groupId>c3p0</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.1.2</version>
+  </dependency>
     <!-- mybatis依赖 -->
     <dependency>
       <groupId>org.mybatis</groupId>

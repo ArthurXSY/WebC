@@ -10,7 +10,7 @@ body {font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-s
 	scrollbar-arrow-color: #ccc;/*箭头*/
 	overflow: -moz-scrollbars-button(#000) !important;
 }
-/*IE用的滑轮*/ 
+/*IE用的滑轮*/
 
 .mScroll::-webkit-scrollbar {
 max-width: 10px;
@@ -56,9 +56,23 @@ background:#FF0BEE;
 }
 
 .mx-1{
-	
-	
-	margin-left: 30px
-	
-	
+
+
+	margin-left: 30px;
+
+
+
 }
+.mx-1 div1{
+	display: inline-block;
+}
+.SysTitle{
+	height:30px;
+	font-size:14px;
+	line-height:30px;
+	text-align:center;
+	font-weight:bolder;
+	overflow: hidden;
+}
+.Content{ width:85%;margin:0;padding:0;display:none;float:left;overflow: hidden;border-style: double;}
+.SysLogo{ width:160px;height:110px; text-align:center; vertical-align:middle;display:table-cell;}

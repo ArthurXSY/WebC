@@ -20,7 +20,7 @@ height:0
 background-color:none
 }/*上下按钮*/
 .mScroll::-webkit-scrollbar-track {
-background:#ccc
+background: #cccccc
 }/*背景颜色*/
 .mScroll::-webkit-scrollbar-thumb {
 background:#888;

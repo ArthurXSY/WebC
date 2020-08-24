@@ -25,7 +25,7 @@ $(function(){
       $("tr:not(tr:first,tr:last)").remove();//每次增加行前删除前面的行，否则会重复增加
       var data = getData();
       $.each(data,function(i, v){
-        $("<tr>").attr("index",i).html("<td contenteditable='true' data-role='name'>" + v.name + "</td>" + "<td contenteditable='true' data-role='sex'>" + v.sex + "</td>" + "<td contenteditable='true' data-role='age'>" + v.age + "</td>" + "<td contenteditable='true' data-role='tel'>" + v.tel + "</td>" + "<td><button class='btn btn-danger btn-sm'>删除</button></td>").insertBefore("tr:last");
+        $("<tr>").attr("index",i).html("<td contenteditable='true' data-role='id'>" + v.id + "</td>" +"<td contenteditable='true' data-role='name'>" + v.name + "</td>" + "<td contenteditable='true' data-role='url'>" + v.url + "</td>" + "<td contenteditable='true' data-role='logo'>" + v.logo + "</td>" + "<td contenteditable='true' data-role='developer'>" + v.developer + "</td>" + "<td><button class='btn btn-danger btn-sm'>删除</button></td>").insertBefore("tr:last");
       })
       saveData(data);
     }
@@ -33,7 +33,7 @@ $(function(){
     //点击增加按钮事件
     $('.btn-sm').click(function(){
         var data = getData();
-        data.push({"name": "", "sex": "", "age": "", "tel": ""});
+        data.push({"id":"","name": "", "url": "", "logo": "", "developer": ""});
         saveData(data);
         add();
 

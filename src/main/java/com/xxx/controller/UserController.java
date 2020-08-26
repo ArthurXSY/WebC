@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.MDC;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uitl.MD5Util;
+import com.xxx.uitl.MD5Util;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

@@ -5,6 +5,15 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
+
+  <!-- Spring监听器 监听加载相关配置文件-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!--防止Spring内存溢出监听器-->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
   <!-- 编码过滤器 -->
   <filter>
     <filter-name>encodingFilter</filter-name>
@@ -20,14 +29,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!-- Spring监听器 监听加载相关配置文件-->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  <!--防止Spring内存溢出监听器-->
-  <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-  </listener>
+
 
   <!--spring的其他配置文件(包括mybatis配置文件) -->
   <context-param>

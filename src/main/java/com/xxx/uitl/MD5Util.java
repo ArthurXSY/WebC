@@ -1,4 +1,4 @@
-package uitl;
+package com.xxx.uitl;
 
 import java.security.MessageDigest;
 

@@ -1,23 +1,23 @@
 package com.xxx.service.impl;
 
-import com.xxx.dao.UserDao;
-import com.xxx.entity.User;
-import com.xxx.service.UserService;
+import com.xxx.dao.WebsiteDao;
+import com.xxx.entity.Website;
+import com.xxx.service.WebsiteService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * (User)表服务实现类
+ * (Website)表服务实现类
  *
  * @author makejava
  * @since 2020-08-27 15:16:00
  */
-@Service("userService")
-public class UserServiceImpl implements UserService {
+@Service("websiteService")
+public class WebsiteServiceImpl implements WebsiteService {
     @Resource
-    private UserDao userDao;
+    private WebsiteDao websiteDao;
 
     /**
      * 通过ID查询单条数据
@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
      * @return 实例对象
      */
     @Override
-    public User queryById(Integer id) {
-        return this.userDao.queryById(id);
+    public Website queryById(Integer id) {
+        return this.websiteDao.queryById(id);
     }
 
     /**
@@ -38,32 +38,32 @@ public class UserServiceImpl implements UserService {
      * @return 对象列表
      */
     @Override
-    public List<User> queryAllByLimit(int offset, int limit) {
-        return this.userDao.queryAllByLimit(offset, limit);
+    public List<Website> queryAllByLimit(int offset, int limit) {
+        return this.websiteDao.queryAllByLimit(offset, limit);
     }
 
     /**
      * 新增数据
      *
-     * @param user 实例对象
+     * @param website 实例对象
      * @return 实例对象
      */
     @Override
-    public User insert(User user) {
-        this.userDao.insert(user);
-        return user;
+    public Website insert(Website website) {
+        this.websiteDao.insert(website);
+        return website;
     }
 
     /**
      * 修改数据
      *
-     * @param user 实例对象
+     * @param website 实例对象
      * @return 实例对象
      */
     @Override
-    public User update(User user) {
-        this.userDao.update(user);
-        return this.queryById(user.getId());
+    public Website update(Website website) {
+        this.websiteDao.update(website);
+        return this.queryById(website.getId());
     }
 
     /**
@@ -74,6 +74,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean deleteById(Integer id) {
-        return this.userDao.deleteById(id) > 0;
+        return this.websiteDao.deleteById(id) > 0;
     }
 }

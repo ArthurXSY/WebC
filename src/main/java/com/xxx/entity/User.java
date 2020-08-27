@@ -1,36 +1,45 @@
 package com.xxx.entity;
 
-public class User {
+import java.io.Serializable;
 
-  private long id;
-  private String name;
-  private String password;
+/**
+ * (User)实体类
+ *
+ * @author makejava
+ * @since 2020-08-27 15:16:00
+ */
+public class User implements Serializable {
+    private static final long serialVersionUID = -67868804345751026L;
 
+    private Integer id;
 
-  public long getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(long id) {
-    this.id = id;
-  }
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+    private String password;
 
 
-  public String getPassword() {
-    return password;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }

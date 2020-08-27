@@ -1,22 +1,32 @@
 package com.xxx.entity;
 
-public class WebSite {
-    @Override
-    public String toString() {
-        return "WebSite [id=" + id + ", webname=" + webname + ", address="
-                + address + ",category="+category+",developer="+developer+"]";
-    }
-    private int id;
+import java.io.Serializable;
+
+/**
+ * (Website)实体类
+ *
+ * @author makejava
+ * @since 2020-08-27 15:16:00
+ */
+public class Website implements Serializable {
+    private static final long serialVersionUID = 385256293325981039L;
+
+    private Integer id;
+
     private String webname;
+
     private String address;
-    private String category;
+
+    private String logo;
+
     private String developer;
 
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -36,12 +46,12 @@ public class WebSite {
         this.address = address;
     }
 
-    public String getCategory() {
-        return category;
+    public String getLogo() {
+        return logo;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public String getDeveloper() {
@@ -51,4 +61,5 @@ public class WebSite {
     public void setDeveloper(String developer) {
         this.developer = developer;
     }
+
 }

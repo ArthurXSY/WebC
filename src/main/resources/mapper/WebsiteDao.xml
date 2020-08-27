@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.dao.WebsiteDao">
+
+    <resultMap type="com.xxx.entity.Website" id="WebsiteMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="webname" column="webname" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="logo" column="logo" jdbcType="VARCHAR"/>
+        <result property="developer" column="developer" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="WebsiteMap">
+        select
+          id, webname, address, logo, developer
+        from webc.website
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="WebsiteMap">
+        select
+          id, webname, address, logo, developer
+        from webc.website
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="WebsiteMap">
+        select
+          id, webname, address, logo, developer
+        from webc.website
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="webname != null and webname != ''">
+                and webname = #{webname}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="logo != null and logo != ''">
+                and logo = #{logo}
+            </if>
+            <if test="developer != null and developer != ''">
+                and developer = #{developer}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into webc.website(webname, address, logo, developer)
+        values (#{webname}, #{address}, #{logo}, #{developer})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update webc.website
+        <set>
+            <if test="webname != null and webname != ''">
+                webname = #{webname},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="logo != null and logo != ''">
+                logo = #{logo},
+            </if>
+            <if test="developer != null and developer != ''">
+                developer = #{developer},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from webc.website where id = #{id}
+    </delete>
+
+</mapper>
